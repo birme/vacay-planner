@@ -20,9 +20,6 @@ COPY . .
 # Build the frontend
 RUN npm run build
 
-# Clean up devDependencies after build
-RUN cd client && npm prune --production
-
 # Create non-root user for security
 RUN addgroup -g 1001 -S nodejs && \
     adduser -S vacayapp -u 1001
