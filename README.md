@@ -2,6 +2,20 @@
 
 A team vacation planning and coordination web application with calendar integration.
 
+## 🚀 Quick Deploy
+
+**Deploy instantly with one click on open source cloud infrastructure:**
+
+[![Deploy on Open Source Cloud](https://img.shields.io/badge/Deploy%20on-Open%20Source%20Cloud-blue?style=for-the-badge&logo=cloud)](https://app.osaas.io/browse/birme-vacay-planner)
+
+No setup required! Click the button above to deploy your own instance of Vacation Planner on Open Source Cloud - a free, open source cloud platform. Your application will be up and running in minutes with:
+
+- ✅ Automatic database provisioning
+- ✅ SSL certificate included  
+- ✅ Production-ready environment
+- ✅ Zero configuration needed
+- ✅ Free hosting on open source infrastructure
+
 ## Features
 
 - **User Authentication**: Role-based access (Admin/User)
