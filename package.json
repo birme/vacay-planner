@@ -1,0 +1,21 @@
+{
+  "name": "vacay-planner",
+  "version": "1.0.0",
+  "description": "A team vacation planning and coordination application",
+  "main": "server/index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "cd server && npm run dev",
+    "client:dev": "cd client && npm run dev",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm run build",
+    "start": "npm run build && cd server && npm start",
+    "start:integrated": "npm run build && cd server && npm start"
+  },
+  "keywords": ["vacation", "planning", "team", "calendar", "couchdb"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

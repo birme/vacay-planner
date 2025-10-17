@@ -1,0 +1,42 @@
+# Dependencies
+node_modules
+*/node_modules
+
+# Build output (will be generated during build)
+client/dist
+
+# Development files
+.env
+server/.env
+*.log
+npm-debug.log*
+
+# Version control
+.git
+.gitignore
+
+# IDE files
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Documentation
+README.md
+
+# Development tools
+.eslintrc*
+.prettierrc*
+
+# Temporary files
+tmp
+temp

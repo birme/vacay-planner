@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  vacay-planner:
+    build: .
+    ports:
+      - "${PORT:-8080}:${PORT:-8080}"
+    environment:
+      - PORT=${PORT:-8080}
+      - COUCHDB_URL=${COUCHDB_URL}
+      - JWT_SECRET=${JWT_SECRET}
+      - NODE_ENV=${NODE_ENV:-production}
+    volumes:
+      # Mount a volume for logs (optional)
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "const http = require('http'); const options = { host: 'localhost', port: process.env.PORT || 8080, path: '/health', timeout: 2000 }; const req = http.request(options, (res) => { process.exit(res.statusCode === 200 ? 0 : 1); }); req.on('error', () => process.exit(1)); req.end();"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: Include CouchDB if you want a complete stack
+  # Uncomment the section below if you want to run CouchDB locally
+  
+  # couchdb:
+  #   image: couchdb:3.3
+  #   environment:
+  #     - COUCHDB_USER=admin
+  #     - COUCHDB_PASSWORD=admin123
+  #   ports:
+  #     - "5984:5984"
+  #   volumes:
+  #     - couchdb_data:/opt/couchdb/data
+  #   restart: unless-stopped
+
+# volumes:
+#   couchdb_data:
