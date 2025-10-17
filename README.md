@@ -24,6 +24,28 @@ No setup required! Click the button above to deploy your own instance of Vacatio
 - **Calendar Integration**: iCal feeds for personal and team calendars
 - **Real-time Updates**: Live status updates and notifications
 
+## Screenshots
+
+### Vacation Request Form
+![Vacation Request](screenshots/vacation-request.png)
+Create and submit vacation requests with date selection and type specification.
+
+### Pending Requests Dashboard
+![Pending Requests](screenshots/pending-request.png)
+View and manage all pending vacation requests with approval/rejection actions.
+
+### User Management Panel
+![User Management](screenshots/user-management.png)
+Admin interface for managing team members, roles, and user accounts.
+
+### Calendar Integration Setup
+![Calendar Integration](screenshots/calendar-integration.png)
+Access personal and team calendar feeds for integration with external calendar applications.
+
+### Connect to Calendar
+![Connect to Calendar](screenshots/connect-to-cal.png)
+Simple interface to copy calendar feed URLs for subscribing in your preferred calendar app.
+
 ## Tech Stack
 
 ### Backend
