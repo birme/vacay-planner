@@ -9,16 +9,19 @@ COPY package*.json ./
 COPY server/package*.json ./server/
 COPY client/package*.json ./client/
 
-# Install dependencies
-RUN npm ci --only=production && \
+# Install all dependencies (including devDependencies for build)
+RUN npm ci && \
     cd server && npm ci --only=production && \
-    cd ../client && npm ci --only=production
+    cd ../client && npm ci
 
 # Copy application code
 COPY . .
 
 # Build the frontend
 RUN npm run build
+
+# Clean up devDependencies after build
+RUN cd client && npm prune --production
 
 # Create non-root user for security
 RUN addgroup -g 1001 -S nodejs && \
