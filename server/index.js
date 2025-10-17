@@ -2,7 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const helmet = require('helmet');
-const rateLimit = require('express-rate-limit');
 const path = require('path');
 const db = require('./config/database');
 
@@ -19,13 +18,6 @@ app.set('trust proxy', true);
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
-
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000,
-  max: 100,
-  trustProxy: true
-});
-app.use(limiter);
 
 db.initialize().then(() => {
   console.log('Database initialized successfully');
